@@ -1,0 +1,217 @@
+*,::after,*::before {
+    box-sizing: border-box;
+    margin: unset;
+    padding: unset;
+}
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    min-height: 100vh;
+    color: hsl(238, 29%, 16%);
+    background-color: hsl(100,0%,100%);
+    font-size: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.wrapper {
+    padding: 6rem;
+    display: grid;
+    place-content: center;
+    position: unset;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-image: linear-gradient(to bottom right , hsl(273, 75%, 66%),  hsl(240, 73%, 65%));
+    transform-origin: left top;
+    transition: transform 300ms linear;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.card {
+    background-color: hsl(100,0%,100%);
+    min-width: 90vw;
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 15rem 1fr;
+    border-radius: 1rem;
+}
+
+
+
+
+.illustration {
+    display: grid;
+    place-items: center;
+}
+
+.illustration-box {
+    display: none;
+}
+
+.illustration-woman-desktop {
+    display: none;
+}
+.illustration-woman-mobile {
+max-width: 65%;
+background-image: url(../images/bg-pattern-mobile.svg);
+background-size: contain;
+margin-block-start: -5rem;
+}
+
+
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+.card-content h1 {
+    font-size: clamp(1.6rem, 5vw + 1rem, 2.4rem);
+}
+
+
+details {
+    max-width: 50ch;
+    padding: 1rem 0.5rem;
+    cursor: pointer;
+}
+
+summary {
+    list-style: none;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+summary img {
+    transition: transform 300ms ease-in;
+}
+
+summary img {
+    transform: rotate(270deg);
+}
+
+details[open] summary img {
+    transform: rotate(360deg);
+}
+
+details > p {
+    color: hsla(238, 29%, 16%, 0.725);
+    padding: 1rem 0.5rem;
+}
+
+details:hover, details:focus {
+    color: hsl(14, 88%, 65%);
+}
+
+
+
+.attribution {
+    position: absolute;
+    right: 2rem;
+    bottom: 0;
+    max-width: 55ch;
+    background-image: linear-gradient(to bottom right , hsl(273, 75%, 66%),  hsl(240, 73%, 65%));
+    padding: 1rem 1.5rem;
+    border-radius: .1rem;
+    color: hsl(238, 29%, 16%);
+    z-index: -1;
+}
+
+
+.attribution a {
+    color: hsl(100,0%,100%);
+}
+
+.show-attribution {
+    transform: rotate(-12deg);
+
+}
+
+
+
+header {
+    display: none;
+} 
+
+
+.pulps {
+    animation: pulps 10000ms cubic-bezier(0.215, 0.610, 0.355, 1) infinite ;
+}
+
+@keyframes pulps {
+    0% {
+     top: -8%;
+    transform: translateY(8%);
+    }
+
+    50% {
+        top: 70%;
+        transform: translateY(-70%);
+    }
+
+    100% {
+        top: -8%;
+        transform: translateY(8%);
+    }
+}
+
+
+
+
+
+@media (min-width:50rem) {
+    .card {
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-content: center;
+    }
+    .illustration {
+        position: relative;
+    }
+    .illustration-woman-mobile {
+        display: none;
+    }
+    .illustration-woman-desktop {
+        display: block;
+        transform: translateX(-16%);
+        background-image: url(../images/bg-pattern-desktop.svg);
+        background-size: contain;
+        background-position: 100%;
+    }
+    .illustration-box {
+        display: inline-flex;
+        position: absolute;
+        top: 70%;
+        left: -12%;
+        transform: translateY(50%);
+        transform-origin: center;
+        z-index: 10;
+    }
+
+
+    header {
+        display: block;
+        position: fixed;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        top: 2rem;
+        left: 2rem;
+        background-image: url(../images/logo.jpg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        cursor: pointer;
+        z-index: 101;
+    }
+
+}

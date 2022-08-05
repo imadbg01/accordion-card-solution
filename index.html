@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header></header>
+    <div class="wrapper">
+      <article class="card">
+       
+        <div class="illustration">
+           <img
+          class="illustration-box pulps"
+          src="./assets/images/illustration-box-desktop.svg"
+          alt=""
+        />
+        <img  class="illustration-woman-desktop" src="./assets/images/illustration-woman-online-desktop.svg" alt="">
+            <img class="illustration-woman-mobile" src="./assets/images/illustration-woman-online-mobile.svg" alt="">
+        </div>
+        <div class="card-content">
+          <h1>FAQ</h1>
+          <div>
+            <details>
+              <summary>
+                How many team members can I invite?
+                <img src="./assets/images/icon-arrow-down.svg" alt="" />
+              </summary>
+              <p class="content">
+                You can invite up to 2 additional users on the Free plan. There
+                is no limit on team members for the Premium plan.
+              </p>
+            </details>
+            <hr />
+            <details>
+              <summary>
+                What is the maximum file upload size?
+                <img src="./assets/images/icon-arrow-down.svg" alt="" />
+              </summary>
+              <p class="content">
+                No more than 2GB. All files in your account must fit your
+                allotted storage space.
+              </p>
+            </details>
+            <hr />
+            <details>
+              <summary>
+                How do I reset my password?
+                <img src="./assets/images/icon-arrow-down.svg" alt="" />
+              </summary>
+              <p class="content">
+                Click “Forgot password” from the login page or “Change password”
+                from your profile page. A reset link will be emailed to you.
+              </p>
+            </details>
+            <hr />
+
+            <details>
+              <summary>
+                Can I cancel my subscription?
+                <img src="./assets/images/icon-arrow-down.svg" alt="" />
+              </summary>
+              <p class="content">
+                Yes! Send us a message and we’ll process your request no
+                questions asked.
+              </p>
+            </details>
+            <hr />
+            <details>
+              <summary>
+                Do you provide additional support?
+                <img src="./assets/images/icon-arrow-down.svg" alt="" />
+              </summary>
+              <p class="content">
+                Chat and email support is available 24/7. Phone lines are open
+                during normal business hours.
+              </p>
+            </details>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Imad</a>.
+    </div>
+
+    <script>
+      const wrapper = document.querySelector(".wrapper");
+      const header = document.querySelector("header");
+
+      header.addEventListener("mouseenter", () => {
+        wrapper.classList.toggle("show-attribution");
+      });
+    </script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
